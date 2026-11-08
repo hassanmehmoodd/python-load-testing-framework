@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Local secrets and ad-hoc run output
+.env
+reports/*
+!reports/samples/
+!reports/samples/**
+runtime.json
+
+# Editor and OS
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "perfload"
+version = "1.0.0"
+description = "Safety-first Python performance and load testing framework."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Hassan Mehmood" }]
+keywords = ["locust", "load-testing", "performance", "qa", "automation"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = [
+    "locust>=2.31,<3",
+    "requests>=2.32",
+    "httpx>=0.27",
+    "fastapi>=0.115",
+    "uvicorn>=0.32",
+    "pydantic>=2.6",
+    "pandas>=2.2,<3",
+    "matplotlib>=3.8",
+    "pyyaml>=6.0",
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+]
+
+[project.scripts]
+perfload = "perfload.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/hassanmehmoodd/python-load-testing-framework"
+Repository = "https://github.com/hassanmehmoodd/python-load-testing-framework"
+Issues = "https://github.com/hassanmehmoodd/python-load-testing-framework/issues"
+
+[tool.setuptools]
+packages = ["perfload", "target_app"]
+
+[tool.setuptools.package-dir]
+perfload = "src/perfload"
+target_app = "target_app"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["src", "target_app", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "W"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["perfload", "target_app", "tests"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["."]
+filterwarnings = [
+    "ignore:Using .httpx. with .starlette.testclient. is deprecated:UserWarning",
+]
