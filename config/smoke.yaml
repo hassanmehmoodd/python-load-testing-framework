@@ -1,0 +1,27 @@
+# Short localhost smoke test used by GitHub Actions.
+target:
+  base_url: "http://127.0.0.1:8000"
+  auth:
+    login_path: "/api/v1/auth/login"
+    me_path: "/api/v1/auth/me"
+    username: "demo"
+    password: "demo-pass"
+
+safeguards:
+  max_users: 25
+  max_spawn_rate: 10
+  allowed_hosts:
+    - localhost
+    - 127.0.0.1
+    - "::1"
+
+load:
+  profile: constant
+  users: 5
+  spawn_rate: 1
+  duration_seconds: 25
+  wait_min_seconds: 0.05
+  wait_max_seconds: 0.15
+
+output:
+  directory: reports/ci

@@ -1,0 +1,28 @@
+# Default perfload run. The target is the in-repo demo API on localhost.
+target:
+  base_url: "http://127.0.0.1:8000"
+  auth:
+    login_path: "/api/v1/auth/login"
+    me_path: "/api/v1/auth/me"
+    username: "demo"
+    password: "demo-pass"
+
+safeguards:
+  # Config caps cannot exceed the absolute caps in src/perfload/constants.py.
+  max_users: 25
+  max_spawn_rate: 10
+  allowed_hosts:
+    - localhost
+    - 127.0.0.1
+    - "::1"
+
+load:
+  profile: ramp
+  users: 10
+  spawn_rate: 2
+  duration_seconds: 40
+  wait_min_seconds: 0.05
+  wait_max_seconds: 0.2
+
+output:
+  directory: reports/latest
