@@ -1,0 +1,200 @@
+{
+  "meta": {
+    "framework": "perfload",
+    "version": "1.0.0",
+    "profile": "ramp",
+    "base_url": "http://127.0.0.1:8000",
+    "host": "127.0.0.1",
+    "users": 10,
+    "spawn_rate": 2.0,
+    "duration_seconds": 40,
+    "started_at": "2026-11-08T17:05:41.904657+00:00",
+    "finished_at": "2026-11-08T17:06:22.472882+00:00",
+    "python": "3.12.3",
+    "platform": "Linux-6.12.113+-x86_64-with-glibc2.39",
+    "cpu_count": 4,
+    "locust": "2.47.0",
+    "concurrency_model": "locust gevent virtual users (one greenlet per user)",
+    "stages": [
+      {
+        "end": 10.0,
+        "users": 2,
+        "spawn_rate": 2.0
+      },
+      {
+        "end": 20.0,
+        "users": 5,
+        "spawn_rate": 2.0
+      },
+      {
+        "end": 30.0,
+        "users": 8,
+        "spawn_rate": 2.0
+      },
+      {
+        "end": 40.0,
+        "users": 10,
+        "spawn_rate": 2.0
+      }
+    ],
+    "target_fault_injection": {
+      "latency_ms": "5",
+      "jitter_ms": "30",
+      "error_rate": "0.02",
+      "note": "Taken from the runner environment. These apply only if the target process was started with the same variables."
+    }
+  },
+  "metrics": {
+    "total_requests": 1741,
+    "successful": 1705,
+    "failed": 36,
+    "average_ms": 23.822650970707038,
+    "median_ms": 23.86576799995055,
+    "p90_ms": 36.217080000028545,
+    "p95_ms": 37.72761699997318,
+    "p99_ms": 38.916149199963,
+    "min_ms": 6.46897700005411,
+    "max_ms": 40.96312999990914,
+    "requests_per_second": 42.915405765960315,
+    "throughput_bytes_per_second": 205608.02947289217,
+    "error_percentage": 2.067777139574957,
+    "elapsed_seconds": 40.568182192999984,
+    "total_bytes": 8341144
+  },
+  "endpoints": [
+    {
+      "name": "GET /api/v1/items",
+      "total": 479,
+      "successful": 471,
+      "failed": 8,
+      "error_percentage": 1.6701461377870561,
+      "average_ms": 23.727960632567466,
+      "median_ms": 23.427495999953862,
+      "p95_ms": 37.49228380002023,
+      "min_ms": 7.397569999966436,
+      "max_ms": 39.89668300005178,
+      "requests_per_second": 11.807282804075237
+    },
+    {
+      "name": "POST /api/v1/items",
+      "total": 368,
+      "successful": 358,
+      "failed": 10,
+      "error_percentage": 2.717391304347826,
+      "average_ms": 23.401345252719103,
+      "median_ms": 23.780523999960224,
+      "p95_ms": 37.3742449999952,
+      "min_ms": 6.46897700005411,
+      "max_ms": 39.786692999996376,
+      "requests_per_second": 9.071148375573461
+    },
+    {
+      "name": "GET /api/v1/items/:id",
+      "total": 285,
+      "successful": 280,
+      "failed": 5,
+      "error_percentage": 1.7543859649122806,
+      "average_ms": 24.04475491227913,
+      "median_ms": 24.131144999955723,
+      "p95_ms": 37.7415729999484,
+      "min_ms": 8.276650999960111,
+      "max_ms": 39.97948300002463,
+      "requests_per_second": 7.0252100191261855
+    },
+    {
+      "name": "PATCH /api/v1/items/:id",
+      "total": 202,
+      "successful": 199,
+      "failed": 3,
+      "error_percentage": 1.4851485148514851,
+      "average_ms": 24.722453163368336,
+      "median_ms": 25.003784499972426,
+      "p95_ms": 38.16467504998968,
+      "min_ms": 7.960647999993853,
+      "max_ms": 40.96312999990914,
+      "requests_per_second": 4.979271662678911
+    },
+    {
+      "name": "PUT /api/v1/items/:id",
+      "total": 189,
+      "successful": 186,
+      "failed": 3,
+      "error_percentage": 1.5873015873015872,
+      "average_ms": 23.18577330688051,
+      "median_ms": 22.63992399991821,
+      "p95_ms": 38.13874140000735,
+      "min_ms": 7.375359999969078,
+      "max_ms": 39.702223999938724,
+      "requests_per_second": 4.658823486367892
+    },
+    {
+      "name": "GET /api/v1/auth/me",
+      "total": 120,
+      "successful": 115,
+      "failed": 5,
+      "error_percentage": 4.166666666666666,
+      "average_ms": 24.002887233330245,
+      "median_ms": 24.64349299998503,
+      "p95_ms": 36.79974269997501,
+      "min_ms": 6.861551999918447,
+      "max_ms": 40.02545299999838,
+      "requests_per_second": 2.9579831659478675
+    },
+    {
+      "name": "DELETE /api/v1/items/:id",
+      "total": 88,
+      "successful": 86,
+      "failed": 2,
+      "error_percentage": 2.272727272727273,
+      "average_ms": 24.260574840914213,
+      "median_ms": 24.733293999986472,
+      "p95_ms": 37.48318300002893,
+      "min_ms": 7.421663000059198,
+      "max_ms": 40.908841000032226,
+      "requests_per_second": 2.1691876550284364
+    },
+    {
+      "name": "POST /api/v1/auth/login",
+      "total": 10,
+      "successful": 10,
+      "failed": 0,
+      "error_percentage": 0.0,
+      "average_ms": 25.376824600004966,
+      "median_ms": 24.27817750003669,
+      "p95_ms": 35.874474600007034,
+      "min_ms": 9.93191600002774,
+      "max_ms": 36.84351900005822,
+      "requests_per_second": 0.2464985971623223
+    }
+  ],
+  "errors": [
+    {
+      "category": "http_status",
+      "key": "500",
+      "count": 36,
+      "percentage": 2.067777139574957
+    }
+  ],
+  "stages": [
+    {
+      "end": 10.0,
+      "users": 2,
+      "spawn_rate": 2.0
+    },
+    {
+      "end": 20.0,
+      "users": 5,
+      "spawn_rate": 2.0
+    },
+    {
+      "end": 30.0,
+      "users": 8,
+      "spawn_rate": 2.0
+    },
+    {
+      "end": 40.0,
+      "users": 10,
+      "spawn_rate": 2.0
+    }
+  ]
+}
